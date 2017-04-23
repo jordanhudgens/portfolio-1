@@ -7,10 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+3.times do |x|
+	Topic.create!(
+		title: "Topic #{x}",
+		body: "asd asd asdasdasdas adasdasd"
+	)
+end
+
+puts "3 topics created"
+
 10.times do |x|
 	Blog.create!(
 		title: "my blog #{x}",
-		body: "asd asd asdasdasdas adasdasd"
+		body: "asd asd asdasdasdas adasdasd",
+		topic_id: Topic.last.id
 	)
 end
 
@@ -28,10 +38,14 @@ puts "5 skills created"
 9.times do |x|
 	PortfolioItem.create!(
 		title: "Portfolio title #{x}",
-		subtitle: "Subtitle for #{x}"
+		subtitle: "Subtitle for #{x}",
 		body: "adsd asd asdasd asdasdasdasdas asd",
 		main_image: "http://placehold.it/600x400",
 		thumb_image: "http://placehold.it/350x200"
 	)
 end
 puts "9 skills created"
+
+
+
+
