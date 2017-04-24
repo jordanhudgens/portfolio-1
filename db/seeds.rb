@@ -9,8 +9,7 @@
 
 3.times do |x|
 	Topic.create!(
-		title: "Topic #{x}",
-		body: "asd asd asdasdasdas adasdasd"
+		title: "Topic #{x}"
 	)
 end
 
@@ -44,7 +43,15 @@ puts "5 skills created"
 		thumb_image: "http://placehold.it/350x200"
 	)
 end
-puts "9 skills created"
+puts "9 Portfolio items created"
+
+3.times do |x|
+	Technology.create!(
+		name: "Technology #{x}",
+		portfolio_item_id: PortfolioItem.last.id
+	)
+end
+puts "3 Technologies created"
 
 
 
