@@ -12,8 +12,12 @@ module ApplicationHelper
 
 	def source_helper
 		if session[:source]
-      content_tag(:p, "Thanks for visiting from #{session[:source]}", class: "source-greeting")
-    end
+          content_tag(:p, "Thanks for visiting from #{session[:source]}", class: "source-greeting")
+        end
 	end
+
+    def set_copyright_helper
+        MilanPortfolioCopyright::Renderer.copyright("Milan", "IT370 projekat")
+    end
 
 end
