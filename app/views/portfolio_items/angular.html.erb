@@ -1,6 +1,6 @@
 <h1>Angular Portfolio items</h1>
 
-<%= link_to "new item", new_portfolio_item_path %>
+<%= link_to "new item", new_portfolio_item_path if logged_in?(:site_admin) %>
 
 <% @angular_items.each do |item| %>
 
@@ -8,7 +8,7 @@
 	<p><%= item.subtitle %></p>
 	<p><%= item.body %></p>
 	<%= image_tag item.thumb_image unless item.thumb_image.nil? %>
-	<%= link_to "edit", edit_portfolio_item_path(item) %>
-	<%= link_to "delete", portfolio_item_path(item), method: :delete, data: { confirm: 'are you sure?' } %>
+	<%= link_to "edit", edit_portfolio_item_path(item) if logged_in?(:site_admin) %>
+	<%= link_to "delete", portfolio_item_path(item), method: :delete, data: { confirm: 'are you sure?' } if logged_in?(:site_admin) %>
 
 <% end %>
