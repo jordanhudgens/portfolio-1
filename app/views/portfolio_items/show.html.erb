@@ -1,10 +1,31 @@
-<%= image_tag @portfolio_item.main_image %>
+<div class="container portfolio-container">
+  <div class="row">
+    <div class="col-md-7">
+      <%= image_tag portfolio_item_img(@portfolio_item.main_image, 'main'), width: '100%' %>
+    </div>
 
-<h1><%= @portfolio_item.title %></h1>
-<h2><%= @portfolio_item.subtitle %></h2>
-<p><%= @portfolio_item.body %></p>
+    <div class="col-md-5">
+      <h1><%= @portfolio_item.title %></h1>
 
-<h3>Technologies used:</h3>
-<% @portfolio_item.technologies.each do |x| %>
-	<p><%= x.name %></p>
-<% end %>	
+      <hr>
+
+      <em><%= @portfolio_item.subtitle %></em>
+
+      <p><%= @portfolio_item.body %></p>
+
+      <hr>
+
+      <h3>Technologies Used:</h3>
+
+      <% @portfolio_item.technologies.each do |t| %>
+      	<p><%= t.name %></p>
+      <% end %>
+
+      <% if logged_in?(:site_admin) %>
+        <div class="">
+          <%= link_to "Edit Item", edit_portfolio_item_path(@portfolio_item), class: 'btn btn-warning' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
