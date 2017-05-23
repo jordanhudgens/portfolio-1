@@ -25,6 +25,9 @@ class PortfolioItem < ApplicationRecord
 		where(subtitle: "Angular")
 	end
 
+	def self.by_position
+		order("position ASC")
+	end
 
 	# object methods
 	def set_defaults
