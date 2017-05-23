@@ -1,7 +1,7 @@
-<div class="container portfolio-container">
+<div class="container">
   <div class="row">
     <div class="col-md-7">
-      <%= image_tag portfolio_item_img(@portfolio_item.main_image, 'main'), width: '100%' %>
+      <%= image_tag @portfolio_item.main_image %>
     </div>
 
     <div class="col-md-5">
@@ -18,13 +18,7 @@
       <h3>Technologies Used:</h3>
 
       <% @portfolio_item.technologies.each do |t| %>
-      	<p><%= t.name %></p>
-      <% end %>
-
-      <% if logged_in?(:site_admin) %>
-        <div class="">
-          <%= link_to "Edit Item", edit_portfolio_item_path(@portfolio_item), class: 'btn btn-warning' %>
-        </div>
+      <p><%= t.name %></p>
       <% end %>
     </div>
   </div>

@@ -1,9 +1,7 @@
 <div class="album text-muted">
   <div class="container">
-    <%= source_helper("alert alert-warning") %>
-
-    <div class="row <%= "sortable" if logged_in?(:site_admin) %>">
-      <%= render @portfolio_items %>
-    </div>
+  	<div class="row">
+	    <%= render @portfolio_items %>
+	  </div>
   </div>
 </div>
