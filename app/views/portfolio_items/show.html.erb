@@ -18,7 +18,11 @@
       <h3>Technologies Used:</h3>
 
       <% @portfolio_item.technologies.each do |t| %>
-      <p><%= t.name %></p>
+        <p><%= t.name %></p>
+      <% end %>
+
+      <% if logged_in?(:site_admin) %>
+        <%= link_to "Edit item", edit_portfolio_item_path(@portfolio_item), class: 'btn btn-warning' %>
       <% end %>
     </div>
   </div>
