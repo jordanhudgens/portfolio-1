@@ -79,3 +79,6 @@ gem 'cocoon', '~> 1.2', '>= 1.2.9'
 
 # alerts/notifications
 gem 'gritter', '~> 1.2'
+
+# twitter
+gem 'twitter', '~> 6.1'

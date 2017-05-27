@@ -19,6 +19,8 @@ Bundler.require(*Rails.groups)
 module Portfolio
   class Application < Rails::Application
 
+    config.eager_load_paths << "#{Rails.root}/lib"
+
   	# custom staffold options when generating scaffold
     config.generators do |g|
     	g.orm             :active_record
