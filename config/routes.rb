@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get 'about-me', to: 'pages#about'  # otvara na /about-me url-u
   get 'contact', to: 'pages#contact'  # otvara na /contact url-u
+  get 'tech-news', to: 'pages#tech_news'  # otvara na /contact url-u
   
   root to: 'pages#home'
 
