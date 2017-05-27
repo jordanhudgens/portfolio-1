@@ -18,3 +18,4 @@
 
 # avoid secrets from commiting
 /config/secrets.yml
+.env
