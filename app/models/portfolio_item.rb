@@ -1,6 +1,4 @@
 class PortfolioItem < ApplicationRecord
-	# includes
-	include Placeholder
 
 	mount_uploader :thumb_image, PortfolioUploader
 	mount_uploader :main_image, PortfolioUploader
@@ -13,14 +11,10 @@ class PortfolioItem < ApplicationRecord
                                 reject_if: lambda { |attrs| attrs['name'].blank? }
 
 	# validations
-	validates_presence_of :title, :body, :main_image, :thumb_image
+	validates_presence_of :title, :body
 
 	# custom scopes
 	scope :ror_portfolio_items, -> { where(subtitle: "RoR") }
-
-
-	# callbacks
-	after_initialize :set_defaults
 
 
 	# class methods
@@ -32,9 +26,4 @@ class PortfolioItem < ApplicationRecord
 		order("position ASC")
 	end
 
-	# object methods
-	def set_defaults
-		self.main_image ||= Placeholder.image_generator(600,400) # set value if nil
-		self.thumb_image ||= Placeholder.image_generator(350,200)
-	end
 end
