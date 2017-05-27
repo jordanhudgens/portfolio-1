@@ -76,3 +76,6 @@ gem 'dotenv-rails', '~> 2.1', '>= 2.1.2'
 
 # nested forms handling
 gem 'cocoon', '~> 1.2', '>= 1.2.9'
+
+# alerts/notifications
+gem 'gritter', '~> 1.2'
