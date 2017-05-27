@@ -52,12 +52,18 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# url formating
 gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
-gem 'devise', '~> 4.2'
+
 
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'milan_portfolio_copyright', '~> 0.1.0'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
+
+
+# authentication
+gem 'devise', '~> 4.2'
 
 # authorization
 gem 'petergate', '~> 1.7'
@@ -82,3 +88,6 @@ gem 'gritter', '~> 1.2'
 
 # twitter
 gem 'twitter', '~> 6.1'
+
+# persist hashes
+gem 'redis', '~> 3.3', '>= 3.3.1'

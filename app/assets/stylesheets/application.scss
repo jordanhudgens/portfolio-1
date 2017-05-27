@@ -37,7 +37,6 @@ body {
 body {
   color: #fff;
   text-align: center;
-  text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -160,7 +159,7 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 55rem;
+    width: 65rem;
   }
 }
 
@@ -210,3 +209,19 @@ body {
 .app-footer {
   color: white;
 }
+
+.tech-news {
+  color: black;
+  margin: 20px;
+  font-size: 0.6rem;
+}
+
+.tech-news > .card {
+  padding: 30px;
+}
+
+.tech-news a {
+  color: green;
+}
+
+
