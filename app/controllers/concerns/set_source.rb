@@ -2,7 +2,7 @@ module SetSource
 	extend ActiveSupport::Concern
 
 	included do 
-  		before_filter :set_source # same as before_action
+  	before_filter :set_source # same as before_action
 	end
 
 	def set_source

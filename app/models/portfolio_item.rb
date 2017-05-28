@@ -1,5 +1,6 @@
 class PortfolioItem < ApplicationRecord
 
+	# upload
 	mount_uploader :thumb_image, PortfolioUploader
 	mount_uploader :main_image, PortfolioUploader
 
@@ -14,17 +15,8 @@ class PortfolioItem < ApplicationRecord
 	# validations
 	validates_presence_of :title, :body
 
-	# custom scopes
-	scope :ror_portfolio_items, -> { where(subtitle: "RoR") }
-
-
 	# class methods
-	def self.angular_portfolio_items
-		where(subtitle: "Angular")
-	end
-
 	def self.by_position
 		order("position ASC")
 	end
-
 end

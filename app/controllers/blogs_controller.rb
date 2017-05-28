@@ -7,7 +7,7 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @blogs = Blog.page(params[:page]).per(5)
-    @page_title = "My Portfolio Blog"
+    @page_title = "Milan's blog"
   end
 
   # GET /blogs/1
@@ -61,7 +61,6 @@ class BlogsController < ApplicationController
     @blog.destroy
     respond_to do |format|
       format.html { redirect_to blogs_url, notice: 'Post was removed.' }
-      format.json { head :no_content }
     end
   end
 
