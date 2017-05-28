@@ -26,7 +26,6 @@ class PortfolioItemsController < ApplicationController
 
 	def create
 		@portfolio_item = PortfolioItem.new(portfolio_item_params)
-		debugger
 
 		respond_to do |format|
 			if @portfolio_item.save
