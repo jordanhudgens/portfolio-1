@@ -14,10 +14,12 @@ Rails.application.routes.draw do
   	end	
   end	
 
-  get 'about-me', to: 'pages#about'  # otvara na /about-me url-u
-  get 'contact', to: 'pages#contact'  # otvara na /contact url-u
-  get 'tech-news', to: 'pages#tech_news'  # otvara na /contact url-u
+  get 'about-me', to: 'pages#about'  
+  get 'contact', to: 'pages#contact'  
+  get 'tech-news', to: 'pages#tech_news'  
   
+  mount ActionCable.server => '/cable'
+
   root to: 'pages#home'
 
 end
