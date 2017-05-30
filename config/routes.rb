@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :portfolio_items do
     put :sort, on: :collection
   end
-  resources :comments
   resources :blogs do 
   	member do
   		get :toggle_status
@@ -13,6 +12,7 @@ Rails.application.routes.draw do
   get 'contact',   to: 'pages#contact'  
   get 'tech-news', to: 'pages#tech_news'  
   
+  # create web socket connection
   mount ActionCable.server => '/cable'
 
   root to: 'pages#home'

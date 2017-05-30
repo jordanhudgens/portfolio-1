@@ -3,7 +3,6 @@ class BlogsChannel < ApplicationCable::Channel
     stream_from "blogs_#{params['blog_id']}_channel"
   end
 
-	# user left the page where comment was live
   def unsubscribed
   end
 
